@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous">
+
+    <title>Archivos</title>
+    <style>
+      table {
+        border-collapse: separate;
+        border-spacing: 20px 0;
+      }
+      th {
+        background-color: #C0C0C0;
+        color: white;
+      }
+      th,
+      td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+      h2 {
+        color: #4287f5;
+      }
+    </style>
+</head>
+<body>
+    <div style="text-align:center;">
+        <h3>Resumen</h3>
+        <table style="margin: 0 auto;">
+            <thead>
+            <tr>
+                <th> Countries </th>
+                <th> Regions </th>
+                <th> Item Types </th>
+                <th> Sales Channels </th>
+                <th> Order Priorities </th>
+            </tr>
+            </thead>
+            <tbody>
+            <td><span th:text="${totalCountries}"> Total Countries </span></td>
+            <td><span th:text="${totalRegions}"> Total Regions </span></td>
+            <td><span th:text="${totalItemTypes}"> Total Item Types </span></td>
+            <td><span th:text="${totalSalesChannels}"> Total Sales Channel </span></td>
+            <td><span th:text="${totalOrderPriorities}"> Total Order Priorities </span></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <button  style="margin-top: 10px;" type="button" th:onclick="|window.location.href='/download'|"> Descargar</button>
+
+        <h2 th:text="${mensaje}"></h2>
+    </div>
+</body>
+</html>
